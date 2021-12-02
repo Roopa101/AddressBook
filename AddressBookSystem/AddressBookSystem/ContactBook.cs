@@ -8,7 +8,8 @@ namespace AddressBookSystem
 {
     class Contact
     {
-         
+
+        List<Contact> addressList = new List<Contact>();
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Address { get; set; }
@@ -19,4 +20,4 @@ namespace AddressBookSystem
         public string Email { get; set; }
     }
 }
-    
+
