@@ -19,11 +19,13 @@ namespace AddressBookSystem
         public string email { get; set; }
         public static List<Person> People = new List<Person>();
         public static Person person = new Person();
-        Dictionary<string, List<Person>> PeopleDictionary = new Dictionary<string, List<Person>>();
-        //Uc5 Use of AddPerson function to add multiple people
+        public static Dictionary<string, List<Person>> PeopleDictionary = new Dictionary<string, List<Person>>();
+
         private static void AddPerson()
         {
 
+            Console.Write("Enter Address Book name:");
+            string AddressBookName = Console.ReadLine();
 
             Console.Write("Enter First Name: ");
             person.FirstName = Console.ReadLine();
@@ -33,7 +35,7 @@ namespace AddressBookSystem
 
             Console.Write("Enter Phone Number: ");
             person.PhoneNumber = Console.ReadLine();
-            Console.Write("Enter Emai:");
+            Console.Write("Enter Email:");
             person.email = Console.ReadLine();
 
             Console.Write("Enter Address: ");
@@ -51,6 +53,19 @@ namespace AddressBookSystem
 
 
             People.Add(person);
+            PeopleDictionary.Add(AddressBookName, People);
+            foreach (KeyValuePair<string, List<Person>> valuePair in PeopleDictionary)
+            {
+                Console.WriteLine("Address book name:" + valuePair.Key);
+                foreach (Person person in valuePair.Value)
+                {
+                    Console.WriteLine("First Name:" + person.FirstName + " Last Name:" + person.LastName);
+                }
+            }
+
+
+
+
         }
         private static void PrintPerson(Person person)
         {
@@ -67,10 +82,11 @@ namespace AddressBookSystem
         {
 
             Console.WriteLine("\tWelcome To Address Book ");
-            Console.WriteLine("\tEnter add Command to add people");
-            Console.WriteLine("\tEnter list Command to list people");
-            Console.WriteLine("\tEnter edit Command to edit  people");
+            Console.WriteLine("\tEnter add Command to add people.  ");
+            Console.WriteLine("\tEnter list Command to list people ");
+            Console.WriteLine("\tEnter edit Command to edit  people  ");
             Console.WriteLine("\tEnter remove Command to edit  people ");
+
             string command = "";
             while (command != "exit")
             {
@@ -188,5 +204,5 @@ namespace AddressBookSystem
             }
         }
     }
-}
 
+}
