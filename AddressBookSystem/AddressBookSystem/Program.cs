@@ -223,6 +223,8 @@ namespace AddressBookSystem
             Console.Write("Enter City : ");
             string searchcity = Console.ReadLine();
             var result = people.FindAll(x => x.city.Equals(searchcity));
+            var resultcount = people.Count(x => x.city.Equals(searchcity));
+            Console.Write("Count of persons in City {0} is : {1}", searchcity, resultcount);
             foreach (var contact in result)
             {
                 Console.WriteLine("\nPerson details are :");
@@ -238,6 +240,8 @@ namespace AddressBookSystem
             Console.Write("Enter State : ");
             string searchstate = Console.ReadLine();
             var result = people.FindAll(x => x.state.Equals(searchstate));
+            var resultcount = people.Count(x => x.state.Equals(searchstate));
+            Console.Write("Count of persons in State {0} is : {1}", searchstate, resultcount);
             foreach (var contact in result)
             {
                 Console.WriteLine("\nPerson details are :");
