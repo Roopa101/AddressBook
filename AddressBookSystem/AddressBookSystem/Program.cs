@@ -248,7 +248,7 @@ namespace AddressBookSystem
                 Console.WriteLine("\nFirstName : {0} \nLastName : {1} \nAddress : {2} \nCity : {3} \nState : {4} \nPhone Number : {5} \nZip : {6} \nEmail : {7}",
                 contact.fisrtName, contact.lastName, contact.address, contact.city, contact.state, contact.phoneNumber,
                contact.zip, contact.email);
-                Console.WriteLine("----------------------------------------------------------------------");
+                Console.WriteLine("---------------------------------------------------------------");
             }
 
         }
