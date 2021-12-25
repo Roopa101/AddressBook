@@ -8,14 +8,14 @@ namespace AddressBookSystem
 {
     public class PersonDetail
     {
-        public string fisrtName { get; set; }
-        public string lastName { get; set; }
-        public string address { get; set; }
-        public string city { get; set; }
-        public string state { get; set; }
-        public double phoneNumber { get; set; }
-        public double zip { get; set; }
-        public string email { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string Address { get; set; }
+        public string City { get; set; }
+        public string State { get; set; }
+        public double PhoneNumber { get; set; }
+        public double Zip { get; set; }
+        public string Email { get; set; }
     }
 }  
     
