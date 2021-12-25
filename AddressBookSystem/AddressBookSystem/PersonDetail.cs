@@ -8,6 +8,8 @@ namespace AddressBookSystem
 {
     public class PersonDetail
     {
+        List<PersonDetail> addressList = new List<PersonDetail>();
+
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Address { get; set; }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -51,7 +52,7 @@ namespace AddressBookSystem
                             break;
                         case 6:
                             Console.WriteLine("Enter you want to edit");
-                            double zip = Convert.ToDouble( Console.ReadLine());
+                            double zip = Convert.ToDouble(Console.ReadLine());                              
                             contact.Zip = zip;
                             break;
                         case 7:
@@ -208,6 +209,25 @@ namespace AddressBookSystem
                         Display();
                         break;
                 }
+            }
+        }
+        public void ReadFile()
+        {
+            Console.WriteLine("The Contact details in the file after reading : \n ");
+            string filePath = @"C:\Users\Dell\Documents\AddressBookProgram\AddressBook\AddressBookSystem\AddressBookSystem\File\File.txt";
+            string text = File.ReadAllText(filePath);
+            Console.WriteLine(text);
+        }
+        public void WritingUsingStreamWriter()
+        {
+            Console.WriteLine("\n The Contact details in the file after writing : ");
+            String filePath = @"C:\Users\Dell\Documents\AddressBookProgram\AddressBook\AddressBookSystem\AddressBookSystem\File\File.txt";
+            using (StreamWriter writer = File.AppendText(filePath))
+            {
+
+                writer.WriteLine("FirstName: Roopa\n LastName: Jamadar \n Address: Khandal \n City: Kalaburgi \n  State: Karnataka \n PhoneNumber:9901123984\n Zip:585401 \n Email: roopajamadar14@gmail.com     \nSNN : 991989999");
+                writer.Close();
+                Console.WriteLine(File.ReadAllText(filePath));
             }
         }
     }

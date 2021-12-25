@@ -10,13 +10,14 @@ namespace AddressBookSystem
     {
         static void Main(string[] args)
         {
+
             bool flag = true;
             PersonDetail contact = new PersonDetail();
             AddressBook addressBook = new AddressBook();
             while (flag)
             {
                 Console.WriteLine("Welcome to the Address Book Program");
-                Console.WriteLine("Enter what you want to do : \n 1. Create Contacts \n 2. Add Contacts \n 3. Edit Contacts \n 4. Delete Contact \n 5. Add Multiple Contact \n 6. Add Unique Contact \n 7. Check For Duplicate Entry \n 8. Check for Person in City or State \n 9. View Persons by City or State \n 10. Number of persons by City or State \n 11. AddressBookSorting \n 12. Sorting entries by City, State or Zipcode \n 13. Exit");
+                Console.WriteLine("Enter what you want to do : \n 1. Create Contacts \n 2. Add Contacts \n 3. Edit Contacts \n 4. Delete Contact \n 5. Add Multiple Contact \n 6. Add Unique Contact \n 7. Check For Duplicate Entry \n 8. Check for Person in City or State \n 9. View Persons by City or State \n 10. Number of persons by City or State \n 11. AddressBookSorting \n 12. Sorting entries by City, State or Zipcode \n 13. Read or Write in Address Book Using File I/O \n 14. Exit");
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch (option)
                 {
@@ -30,7 +31,7 @@ namespace AddressBookSystem
                             City = Console.ReadLine(),
                             State = Console.ReadLine(),
                             Zip = Convert.ToDouble( Console.ReadLine()),
-                            PhoneNumber = Convert.ToDouble(Console.ReadLine()),
+                            PhoneNumber = Convert.ToDouble( Console.ReadLine()),
                             Email = Console.ReadLine(),
                         };
                         break;
@@ -44,7 +45,7 @@ namespace AddressBookSystem
                             City = Console.ReadLine(),
                             State = Console.ReadLine(),
                             Zip = Convert.ToDouble( Console.ReadLine()),
-                            PhoneNumber = Convert.ToDouble( Console.ReadLine()),
+                            PhoneNumber = Convert.ToDouble(Console.ReadLine()),
                             Email = Console.ReadLine(),
                         };
                         addressBook.AddContact(contact);
@@ -72,8 +73,8 @@ namespace AddressBookSystem
                             Address = Console.ReadLine(),
                             City = Console.ReadLine(),
                             State = Console.ReadLine(),
-                            Zip = Convert.ToDouble(Console.ReadLine()),
-                            PhoneNumber =  Convert.ToDouble(Console.ReadLine()),
+                            Zip = Convert.ToDouble( Console.ReadLine()),
+                            PhoneNumber = Convert.ToDouble( Console.ReadLine()),
                             Email = Console.ReadLine(),
                         };
                         addressBook.AddContact(contact);
@@ -122,6 +123,10 @@ namespace AddressBookSystem
                         addressBook.Sorting();
                         break;
                     case 13:
+                        addressBook.ReadFile();
+                        addressBook.WritingUsingStreamWriter();
+                        break;
+                    case 14:
                         flag = false;
                         break;
                 }
